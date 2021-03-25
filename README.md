@@ -39,3 +39,13 @@ If files end up owned by root the following should be run to make current user o
 ```bash
 sudo chown -R $(whoami).users .
 ```
+## Pushing files to git
+Make changes to proj and then save them.
+Make sure that git config --global user.name ""
+git config --global user.email "" are both set
+
+Then go to source control, on the left side of VSCODE
+Your changes will appear here
+Hover over the change and click the plus to stage changes
+Add a comment in the textfield
+Then click the tick at the top bar to commit
