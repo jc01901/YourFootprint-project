@@ -1,6 +1,15 @@
 version: "3.7"
 
 services:
+    db:
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_DATABASE: docker
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_ROOT_PASSWORD: group17
+    
     web:
         build: .
         image: yourfootprint
@@ -8,4 +17,8 @@ services:
             - 3000:3000
         volumes:
             - .:/app
+        depends_on:
+            - db
+        links:
+            - db
         
