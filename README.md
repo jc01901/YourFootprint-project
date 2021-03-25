@@ -41,9 +41,11 @@ sudo chown -R $(whoami).users .
 ```
 ## Pushing files to git
 Make changes to proj and then save them.
+
 Make sure that
 
 git config --global user.name ""
+
 git config --global user.email "" 
 
 are both set
