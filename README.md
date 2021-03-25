@@ -49,3 +49,7 @@ Your changes will appear here
 Hover over the change and click the plus to stage changes
 Add a comment in the textfield
 Then click the tick at the top bar to commit
+
+Go to the bottom left blue bar
+There should be rotating arrow to push changes.
+Done.
