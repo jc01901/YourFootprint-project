@@ -58,9 +58,9 @@ Make changes to project and then save them.
 Make sure that the following configurations are set:
 
 ```bash
-git config --global user.name ""
+git config --global user.name 
 
-git config --global user.email "" 
+git config --global user.email
 ```
 ### Using VSCode
 On the left side of VSCode go to source control, your changes will appear here:
