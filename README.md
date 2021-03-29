@@ -1,20 +1,39 @@
 # YourFootprint - Group 17
+## Adding to the readme
+When editing use this as a guide: https://guides.github.com/features/mastering-markdown/
+
+When writing code please wrap in triple backticks ```` ``` ```` before and after. If writing code for bash use ```` ```bash your code here ``` ````
+
+For example:
+```bash
+your code here
+```
+
 ## Initial Setup
 ### Creating the image
-This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:
+This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:h
 ```bash
 docker-compose up --build 
 ```
-## Running bash
+## Running bash on rails container
 After the command finishes running open other terminal window and run the following command to open bash inside the container:
 ```bash
 docker exec -it yourfootprint-group-17_web_1 /bin/bash -il
 ```
+## Database
+### Rails container
+To access the database from the rails container you must first access the rails container using [this](#running-bash) command, then type:
+```bash
+rails db
+```
+The password is currently: "admin"
+
+## Troubleshooting
+### Rails container
 This command will spin up a new container using the image created in [this](#creating-the-image) command (used for debugging mainly):
 ```bash
 docker run -it --rm yourfootprint /bin/bash -il
 ```
-## Database
 ### MySQL container
 To access the database container directly use:
 ```bash
@@ -26,43 +45,48 @@ mysql -u admin -p docker
 ```
 The password is currenty: "admin"
 
-### Rails container
-To access the database from the rails container you must first access the rails container using [this](#running-bash) command, then type:
-```bash
-rails db
-```
-The password is currently: "admin"
-
-## Linux troubleshoot
-### Files owned by root
+### Linux troubleshoot
+#### Files owned by root
 If files end up owned by root the following should be run to make current user owner of all files
 ```bash
 sudo chown -R $(whoami).users .
 ```
 ## Pushing files to git
-Make changes to proj and then save them.
+Make changes to project and then save them.
 
-Make sure that
+### First time setup
+Make sure that the following configurations are set:
 
+```bash
 git config --global user.name ""
 
 git config --global user.email "" 
+```
+### Using VSCode
+On the left side of VSCode go to source control, your changes will appear here:
 
-are both set
+![alt text](./README/source_control_1.png)
 
-Then go to source control, on the left side of VSCODE
+Hover over the change and click the plus to stage changes (If you are working on two separate things and need to make a commit you should split the changes into multiple commits if you can): 
 
-Your changes will appear here
+![alt text](./README/source_control_2.png)
 
-Hover over the change and click the plus to stage changes
+Alternatively hover over the changes bar and click the plus to stage all changes:
 
-Add a comment in the textfield
+![alt text](./README/source_control_3.png)
 
-Then click the tick at the top bar to commit
+Then add a title for your changes (be descriptive):
 
+![alt text](./README/source_control_4.png)
 
-Go to the bottom left blue bar
+Then click the tick at the top bar to commit:
 
-There should be rotating arrow to push changes.
+![alt text](./README/source_control_5.png)
 
-Done.
+Click on the triple dot and click on push:
+
+![alt text](./README/source_control_6.png)
+
+### If your commit fails
+
+If your commit fails you might need to pull the changes from commits that others have made. To do this you open the triple dot menu and click pull and then try push again.
