@@ -11,7 +11,7 @@ your code here
 
 ## Initial Setup
 ### Creating the image
-This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:h
+This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:
 ```bash
 docker-compose up --build 
 ```
