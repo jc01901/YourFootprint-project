@@ -60,7 +60,7 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0.0'
 gem 'modernizr-rails'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'
