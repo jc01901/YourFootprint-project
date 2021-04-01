@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'calculator/calculator'
   get 'home/home'
   get 'home/about'
-  root to: 'home#home'
+  root 'home#home'
 end
