@@ -23,8 +23,22 @@ class HomeController < ApplicationController
     time_str = time.strftime("%Y-%m-%dT%H:%M:%S")
 
     # Retrieve top headlines
-    @top_headlines = newsapi.get_everything(q:  query,
-                                            from:  time_str)
+    @news_articles = newsapi.get_everything(q:  query,
+                                            from:  time_str,
+																						language: 'en')
+
+		# @news_articles is an array of article objects, the following shows what data the objects contain and how to access them:
+		# (Where x is some index in the array)
+		# 
+		# @news_articles[x].id
+		# @news_articles[x].name
+		# @news_articles[x].author
+		# @news_articles[x].title
+		# @news_articles[x].description
+		# @news_articles[x].content
+		# @news_articles[x].url
+		# @news_articles[x].urlToImage
+		# @news_articles[x].publishedAt
 
   end
 end
