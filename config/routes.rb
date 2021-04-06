@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'profile/profile'
+  get '/profile', to: 'profile#profile'
   get 'profile/edit'
   get 'profile/change_password'
   get '/calculator', to: 'calculator#calculator'
