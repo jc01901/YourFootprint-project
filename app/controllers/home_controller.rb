@@ -22,10 +22,18 @@ class HomeController < ApplicationController
     time = Time.now() - 7*(3600*24)
     time_str = time.strftime("%Y-%m-%dT%H:%M:%S")
 
-    # Retrieve top headlines
-    @news_articles = newsapi.get_everything(q:  query,
-                                            from:  time_str,
-																						language: 'en')
+    begin
+      # Retrieve top headlines
+      @news_articles = newsapi.get_everything(q:  query, from:  time_str, language: 'en')
+
+    rescue => e
+      # Catch any exceptions and allow website to continue running
+      logger.error "Exception when retrieving articles:\n"\
+                   "\te Class:      #{ e.class.name }\n"\
+                   "\te Message:    #{ e.message }\n"\
+                   "#{ e.full_message }"
+      @news_articles = []
+    end
 
 		# @news_articles is an array of article objects, the following shows what data the objects contain and how to access them:
 		# (Where x is some index in the array)
