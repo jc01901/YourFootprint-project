@@ -16,6 +16,9 @@
     <title>YourFootprint</title>
   </head>
   <body class="bg-light">
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>   
+    <%end%> 
     <%= render "home/header" %>
     <%= yield %>
     <!-- Optional JavaScript; choose one of the two! -->
