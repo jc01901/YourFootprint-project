@@ -64,3 +64,6 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'modernizr-rails'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'
+
+gem 'news-api'
+gem 'time'
