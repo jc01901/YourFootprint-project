@@ -120,6 +120,7 @@ GEM
     modernizr-rails (2.7.1)
     msgpack (1.4.2)
     mysql2 (0.5.3)
+    news-api (0.2.0)
     nio4r (2.5.7)
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
@@ -195,6 +196,7 @@ GEM
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    time (0.1.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -231,6 +233,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   modernizr-rails
   mysql2 (~> 0.5.3)
+  news-api
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
@@ -238,6 +241,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
+  time
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
