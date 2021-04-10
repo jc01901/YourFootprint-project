@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.navbar-shadow {
+
+    box-shadow: 0 -1px 40px 2px rgba(82,82,82, 1.0);
+
+}
