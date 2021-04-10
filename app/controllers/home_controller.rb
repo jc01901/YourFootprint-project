@@ -2,6 +2,16 @@ class HomeController < ApplicationController
   skip_before_action :verify_authenticity_token
   def home
     get_articles()
+
+    #connect to the website airnowapi.org
+    require 'net/http'
+    require 'json'
+        
+    @url = 'https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=89129&distance=0&API_KEY=A99F9904-9D5E-49D7-930D-D1A77B37F913'
+    @uri = URI(@url)
+    #Gets the result from the website
+    @response = Net::HTTP.get(@uri) # => string
+    @air_output = JSON.parse(@response) # turns string into a javascript object
   end
 
   def about
@@ -65,15 +75,4 @@ class HomeController < ApplicationController
 		# @news_articles[x].publishedAt
 
   end
-
-  def get_air
-    #connect to the website
-    require 'net/http'
-    require 'json'
-
-    @url = 'https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=20002&distance=25&API_KEY=A99F9904-9D5E-49D7-930D-D1A77B37F913'
-    @uri = URI(@url)
-    #Gets the result from the website
-    @response = Net::HTTP.get(@uri)
-    @output = JSON.parse(@response)
 end
