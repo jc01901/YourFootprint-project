@@ -65,6 +65,7 @@ gem 'modernizr-rails'
 gem 'jquery-rails'
 gem 'devise', '~> 4.2'
 gem 'mimemagic', '~> 0.3.6'
+gem 'json', '~> 2.5', '>= 2.5.1'
 
 gem 'news-api'
 gem 'time'
