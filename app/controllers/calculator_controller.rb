@@ -5,7 +5,7 @@ class CalculatorController < ApplicationController
     petrol_km = params[:petrol_km]
     diesel_km = params[:diesel_km]
     petrol_miles = params[:petrol_miles]
-    diesel_miles = params[:deisel_miles] 
+    diesel_miles = params[:diesel_miles] 
     # initilize output variables
     power_co2e = 0
     petrol_co2e = 0
@@ -38,9 +38,12 @@ class CalculatorController < ApplicationController
     # allocate points
     user_points = total_co2e.round()
     # create User_data database record
-    User_data.create(user_id: user.id, date: DateTime.current.midnight, petrol_usage: petrol_co2e, diesel_usage: diesel_co2e, power_usage: power_co2e, user_points: user_points)
+    #User_data.create(user_id: user.id, date: DateTime.current.midnight, petrol_usage: petrol_co2e, diesel_usage: diesel_co2e, power_usage: power_co2e, user_points: user_points)
     # send user back to homepage (not final)
-    redirect_to root_path
+   # redirect_to root_path
+  end
+
+  def show
   end
 
 end
