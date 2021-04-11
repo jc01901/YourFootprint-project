@@ -1,10 +1,65 @@
 <main>
-    <div class="row">
-        <div class="jumbotron text-center w-50 p-5" style="margin: 0 auto;border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
+    <div class="row pt-5" style="margin:0 auto; width:70%;">
+        <div class="container p-5" style="border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
             <h1 class="display-2" style="color:black;">YourFootprint<small class="text-muted"> Calculator</small></h1>
-            <h3 class="h2" style="color: darkslategrey;">
-                <small>Calculate your differences</small>
-            </h3>
+            <hr>
+            <form>
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 col-form-label">Power Usage</label>
+                  <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Enter Power Usage, kWh">
+                  </div>
+                </div>
+                <fieldset class="form-group row">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Fuel</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="fuelRadios" id="fuelRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            Petrol
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="fuelRadios" id="fuelRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            Diesel
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="form-group row">
+                    <div class="row">
+                      <legend class="col-form-label col-sm-2 pt-0">Distance</legend>
+                      <div class="col-sm-10">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            Kilometers
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2">
+                          <label class="form-check-label" for="gridRadios2">
+                            Miles
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Distance</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Enter Distance Travelled">
+                    </div>
+                  </div>
+                <div class="form-group row">
+                  <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                  </div>
+                </div>
+              </form>
         </div>
     </div>
 </main>
