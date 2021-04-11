@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-04-07
+  electricity_usage: 1
+  petrol: 1
+  user_points: 1
+
+two:
+  date: 2021-04-07
+  electricity_usage: 1
+  petrol: 1
+  user_points: 1
