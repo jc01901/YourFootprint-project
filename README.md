@@ -44,7 +44,19 @@ To access the database from there use:
 mysql -u admin -p docker 
 ```
 The password is currenty: "admin"
+### Database unknown
+If you get the error:
+```bash
+database 'docker' unknown
+```
+you need to create the database, while using the mysql terminal use this command:
+```bash
+create database
+```
 
+### News API
+#### Query limit
+There is a query limit of 100 per day, so try to keep usage to a minimum
 ### Linux troubleshoot
 #### Files owned by root
 If files end up owned by root the following should be run to make current user owner of all files
@@ -90,3 +102,4 @@ Click on the triple dot and click on push:
 ### If your commit fails
 
 If your commit fails you might need to pull the changes from commits that others have made. To do this you open the triple dot menu and click pull and then try push again.
+
