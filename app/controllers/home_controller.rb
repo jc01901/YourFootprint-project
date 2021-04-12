@@ -7,7 +7,7 @@ class HomeController < ApplicationController
     require 'net/http'
     require 'json'
         
-    @url = 'https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=89129&distance=0&API_KEY=A99F9904-9D5E-49D7-930D-D1A77B37F913'
+    @url = 'https://www.airnowapi.org/aq/observation/zipCode/current/?format=application/json&zipCode=20002&distance=25&API_KEY=A99F9904-9D5E-49D7-930D-D1A77B37F913'
     @uri = URI(@url)
     # Gets the result from the website
     @response = Net::HTTP.get(@uri) # => string
