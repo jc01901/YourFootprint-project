@@ -17,9 +17,9 @@
   </head>
   <body style="height:100%; width:100%; margin:0px;padding:0px;overflow-x: hidden; background-size: 100% 100%;background-image: url('https://cdn.wallpapersafari.com/36/80/EKWszP.gif');">
     <% flash.each do |key, value| %>
-    <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>  
+    <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
     <% end %>
-    <%= render "home/nav" %> 
+    <%= render "home/nav" %>
     <%= yield %>
     <!-- Optional JavaScript; choose one of the two! -->
 
