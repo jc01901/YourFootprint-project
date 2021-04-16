@@ -1,10 +1,55 @@
-<div class="container-fluid px-4">
+<!-- <div class="container-fluid px-4">
     <div class="row">
 		<div class="col text-center p-5" style="margin: 0 auto;border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
 			<h1 class="display-2">Welcome to</h1>
 		</div>
         <div class="col text-center p-5" style="margin: 0 auto;border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
             <h1 class="display-2">Welcome to</h1>
+        </div>
+	</div>
+</div> -->
+
+<div class="container-fluid px-4">
+    <div class="row px-2 py-4">
+		<div class="col text-center px-5">
+            <div class="container-fluid p-0" style="border-radius: 10px; background-color: rgba(214, 213, 213, 0.8)">
+                <h1 class="p-3 display-2">News articles</h1>
+            </div>
+            <div class="d-flex flex-column p-0" style="border-radius: 10px; background-color: rgba(256, 256, 256, 1); width: 100%">
+                <% 10.times do |x| %>
+                    <div class="px-1 pt-1">
+                        <div class="d-flex">
+                            <div class="col p-4">
+                                <div class="d-flex justify-content-between" style="height: 24px">
+                                    <h5 class="m-0" style="display: flex; align-self: flex-end; font-weight: bold;">Name</h5>
+                                    <h6 class="m-0" style="display: flex; align-self: flex-end; font-weight: bold;">Date</h6>
+                                </div>
+                                <div class="d-flex flex-row py-2" style="height: 60px">
+                                    <h4 style="text-align: justify; font-weight: bold;">Title</h4>
+                                </div>
+                                <div class="d-flex flex-row overflow-hidden" style="height: 134px">
+                                    <p>Description</p>
+                                </div>
+                                <div class="d-flex flex-fill" style="height: 34px; padding-top: 10px; font-weight: bold;">
+                                    <div>Author</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <% if x == 0%>
+                                    <img class="img-fluid" style="box-sizing: border-box; max-width:auto; height:100%; object-fit: cover; border-radius: 0 8px 0 0;" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/utvzrithrafokwbcktzd.jpg">
+                                <% else %>
+                                    <img class="img-fluid" style="box-sizing: border-box; max-width:auto; height:100%; object-fit: cover;" src="https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/utvzrithrafokwbcktzd.jpg">
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+		</div>
+        <div class="col text-center px-5" style="width:50%">
+            <div class="container-fluid" style="padding: 0; border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
+                <h1 class="p-3 display-2">Twitter feed</h1>
+            </div>
         </div>
 	</div>
 </div>
