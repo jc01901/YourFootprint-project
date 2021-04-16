@@ -6,7 +6,7 @@ class InfoController < ApplicationController
   def get_articles
 
     # Init
-    #newsapi = News.new("6bc9b9135f7642a3b1ab8f826816e3ce")
+    newsapi = News.new("6bc9b9135f7642a3b1ab8f826816e3ce")
 
     # The list of keywords to query for
     query_elements = ["climate change","environment"]
