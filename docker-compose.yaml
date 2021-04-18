@@ -3,6 +3,8 @@ version: "3.7"
 services:
     db:
         image: mysql:5.7
+        # volumes: 
+        #     - db_data:/var/lib/mysql
         restart: always
         environment:
             MYSQL_DATABASE: docker
@@ -21,4 +23,8 @@ services:
             - db
         links:
             - db
+
+# Do we want the db to have a volume
+# volumes:
+#     db_data: {}
         
