@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'info/info'
   devise_for :users
   get '/profile', to: 'profile#profile'
   get '/leaderboard', to: 'leaderboard#leaderboard'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'about', to: 'home#about'
   post 'request_contact', to: 'home#request_contact'
+  get 'information', to: 'info#info'
+
   root 'home#home'
 
 end
