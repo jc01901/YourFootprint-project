@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="container-fluid text-center">
+        <div class="jumbotron text-center p-5 main-objects">
+            <h1 class="display-2">Leaderboard</h1>
+            <h3 class="h2" style="color: darkslategrey;">
+                <small>See your impact compared to others</small>
+            </h3>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm text-center">
+        <div class="jumbotron text-center p-5 main-objects leaderboards">
+            <h1 class="display-3">All Time</h1>
+            <h3 class="h2" style="color: darkslategrey;">
+                <small>Least CO2e emissions</small>
+            </h3>
+            <ul class="list-group">
+                <% @all_time_leaderboard_users.take(10).each do |user| %>
+                    <li>
+                        <%= user.username %>
+                        <%= user.lifetime_user_points %>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

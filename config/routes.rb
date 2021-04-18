@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/profile', to: 'profile#profile'
+  get '/leaderboard', to: 'leaderboard#leaderboard'
   get 'profile/edit'
   get 'profile/change_password'
   get '/calculator', to: 'calculator#calculator'
