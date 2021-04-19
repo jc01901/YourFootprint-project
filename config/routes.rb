@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'weather/weather'
   get 'info/info'
   devise_for :users
   get '/profile', to: 'profile#profile'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get 'about', to: 'home#about'
   post 'request_contact', to: 'home#request_contact'
   get 'information', to: 'info#info'
+  get 'weather', to: 'weather#weather'
 
   root 'home#home'
 
