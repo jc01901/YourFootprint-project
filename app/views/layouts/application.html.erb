@@ -19,8 +19,10 @@
     <% flash.each do |key, value| %>
     <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
     <% end %>
-    <%= render "home/nav" %>
-    <%= yield %>
+    <div class="d-flex flex-column" style="height:100%">
+      <%= render "home/nav" %>
+      <%= yield %>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
