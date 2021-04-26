@@ -34,3 +34,54 @@ form label, form input {
 .grey {
     background-color: grey;
 }
+
+.font-shape {
+    font-weight: 300;
+    line-height: 1.2;
+}
+.navbar-padding {
+    padding-top: 20px !important;
+}
+
+.air-quality {
+    margin:0 auto !important;
+    width:fit-content !important;
+}
+
+.air-quality-text {
+    display: inline-block;
+    font-size: 30px !important; 
+}
+
+.air-quality-text-sub {
+    color: white;
+}
+
+.link-style {
+    text-decoration: none;
+    color: black;
+}
+
+.main-content {
+    border-radius: 25px;
+    background-color: rgba(214, 213, 213, 0.8);
+}
+
+.subtitle {
+    color: darkslategrey;
+}
+
+.carousel-text {
+    border-radius: 25px; 
+    background-color:rgba(157, 223, 148, 0.4);
+}
+
+.bottom-bar {
+    bottom:0px;
+    position:absolute;
+    background-color: rgba(214, 213, 213, 0.7);
+}
+
+.live-pill {
+    vertical-align: 50%;
+}

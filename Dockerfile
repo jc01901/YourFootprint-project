@@ -13,8 +13,9 @@ COPY Gemfile /app/Gemfile
 RUN bundle install
 COPY . /app
 
-RUN chmod +x /app/entrypoint.sh
-ENTRYPOINT [ "/app/entrypoint.sh" ]
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT [ "entrypoint.sh" ]
 
 EXPOSE 3000
 # WORKDIR /app/app

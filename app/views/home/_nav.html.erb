@@ -1,14 +1,45 @@
-<div class="container w-100" style="height:58px;">
-  <nav style="padding-top: 20px;" class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+<div class="container w-100 d-lg-none Small">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent navbar-padding">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
       <div class="navbar-nav">
-        <div class="btn-group " role="group" aria-label="Button group example">
+        <div class="btn-group-vertical" role="group" aria-label="Button group example">
           <a type="button" href="/" class="btn btn-dark btn-md">YourFootprint</a>
-          <a type="button" href="/information" class="btn btn-light btn-md">Information</a>
-          <a type="button" href="/about" class="btn btn-light btn-md">About</a>
+          <a type="button" href="/information" class="btn btn-light btn-md">Articles & Live Feed</a>
           <a type="button" href="/calculator" class="btn btn-light btn-md">Calculator</a>
-          <a type="button" class="btn btn-light btn-md">Profile Page</a>
+          <a type="button" href="/weather" class="btn btn-light btn-md">Weather</a>
           <a type="button" href="/leaderboard" class="btn btn-light btn-md">Leaderboard</a>
+          <a type="button" href="/about" class="btn btn-light btn-md">About</a>
+          <!-- <a type="button" class="btn btn-info btn-md">Login</a>
+          <a type="button" class="btn btn-info btn-md">Sign Up</a> -->
+          <% if current_user %>
+            <%= link_to "Edit Profile", edit_user_registration_path , method: :get, class: 'btn btn-info btn-md' %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'btn btn-info btn-md' %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path,  class: 'btn btn-info btn-md' %>
+            <%= link_to "Sign up", new_user_registration_path,  class: 'btn btn-info btn-md' %>
+          <% end %>
+      </div>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container w-100 d-none d-lg-block large">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent navbar-padding">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <div class="navbar-nav">
+        <div class="btn-group" role="group" aria-label="Button group example">
+          <a type="button" href="/" class="btn btn-dark btn-md">YourFootprint</a>
+          <a type="button" href="/information" class="btn btn-light btn-md">Articles & Live Feed</a>
+          <a type="button" href="/calculator" class="btn btn-light btn-md">Calculator</a>
+          <a type="button" href="/weather" class="btn btn-light btn-md">Weather</a>
+          <a type="button" href="/leaderboard" class="btn btn-light btn-md">Leaderboard</a>
+          <a type="button" href="/about" class="btn btn-light btn-md">About</a>
           <!-- <a type="button" class="btn btn-info btn-md">Login</a>
           <a type="button" class="btn btn-info btn-md">Sign Up</a> -->
           <% if current_user %>

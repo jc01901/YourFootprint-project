@@ -19,9 +19,16 @@ class InfoController < ApplicationController
     time = Time.now() - 7*(3600*24)
     time_str = time.strftime("%Y-%m-%dT%H:%M:%S")
 
+    # Log NewsAPI query
+    logger.info "Building query with:\n"\
+                "\tquery:     #{query}\n"\
+                "\ttime:      #{time_str}\n"\
+                "Querying NewsAPI..."
+
     begin
       # Retrieve top headlines
-      @news_articles = newsapi.get_everything(q:  query, from:  time_str, language: 'en')
+      @news_articles = newsapi.get_everything(q:  query, from:  time_str, language: 'en', pageSize: 20)
+      # @news_articles = newsapi.get_top_headlines(q:  query, country: 'en')
 
     rescue => e
       # Catch any exceptions and allow website to continue running
@@ -31,6 +38,9 @@ class InfoController < ApplicationController
                    "#{ e.full_message }"
       @news_articles = []
     end
+
+    # Log number of articles recieved from query
+    logger.info "Number of articles retrieved: #{@news_articles.length()}"
 
 		# @news_articles is an array of article objects, the following shows what data the objects contain and how to access them:
 		# (Where x is some index in the array)
