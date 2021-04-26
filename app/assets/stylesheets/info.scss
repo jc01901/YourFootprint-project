@@ -1,3 +1,28 @@
 // Place all the styles related to the Info controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.title-box {
+    border-radius: 10px; 
+    background-color: rgba(214, 213, 213, 0.8);
+}
+
+.news-articles {
+    border-radius: 10px; 
+    background-color: rgba(256, 256, 256, 1);
+    width: 100%; 
+    font-size: 1.042vw;
+}
+
+.news-articles-text { 
+    display: flex; 
+    align-self: flex-end; 
+    font-weight: bold;
+}
+
+.news-articles-title {
+    font-size: 1.3em;
+}
+
+.news-articles-subtitle {
+    font-size: 0.9em;
+}
