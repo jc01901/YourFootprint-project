@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => {
+    registrations: 'users/registrations'
+  }
+
   get 'weather/weather'
   get 'info/info'
-  devise_for :users
   get '/profile', to: 'profile#profile'
   get '/leaderboard', to: 'leaderboard#leaderboard'
   get 'profile/edit'

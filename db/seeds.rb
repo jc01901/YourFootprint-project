@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_data.create
+user = User.new(
+  :email => "admin@surrey.ac.uk",
+  :password => "12345678",
+  :password_confirmation => "12345678"
+)
+user.save!
