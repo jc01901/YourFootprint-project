@@ -4,9 +4,10 @@ class LeaderboardController < ApplicationController
     @all_time_leaderboard_users = Array.new
     # Get all of the users together
     users = User.all
+    user_data = UserData.all
     for user in users do
       # Check if the user has updated their account in the last 7 days
-      if user_data.where(user_id: user.id).order(created_at DESC)[0].created_at > (DateTime.current.midnight - 7)
+      if user_data.where(user_id: user.id).order(created_at :desc)[0].created_at > (DateTime.current.midnight - 7)
         # If updated in the last 7 days add them to the users to be displayed  
         @all_time_leaderboard_users.push(user)
       end
