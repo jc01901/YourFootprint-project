@@ -13,7 +13,8 @@ user1 = User.create({
   :firstname => "John",
   :surname => "Johnson",
   :dob => "13/03/1999",
-  :post_code => "GU2 7JW"
+  :post_code => "GU2 7JW",
+  :lifetime_points => 31
 })
 
 user1.user_data.create({
@@ -24,7 +25,7 @@ user1.user_data.create({
 })
 
 user1.user_data.create({
-  :date => "01/02/2021",
+  :date => DateTime.current - 1,
   :electricity_usage => 341,
   :petrol => 350,
   :user_points => 21
@@ -39,13 +40,40 @@ user2 = User.create({
   :firstname => "Adam",
   :surname => "Wall",
   :dob => "13/03/1999",
-  :post_code => "GU2 I4L"
+  :post_code => "GU2 I4L",
+  :lifetime_points => 16
 })
 
 user2.user_data.create({
-  :date => "15/02/2021",
+  :date => DateTime.current - 1,
   :electricity_usage => 100,
   :petrol => 200,
   :user_points => 16
 })
 user2.save!
+
+user3 = User.create({
+  :email => "admin2@surrey.ac.uk",
+  :password => "12345678",
+  :password_confirmation => "12345678",
+  :firstname => "David",
+  :surname => "Davis",
+  :dob => "23/04/1998",
+  :post_code => "GU2 7JW",
+  :lifetime_points => 46
+})
+
+user3.user_data.create({
+  :date => "15/02/2021",
+  :electricity_usage => 100,
+  :petrol => 200,
+  :user_points => 16
+})
+
+user3.user_data.create({
+  :date => DateTime.current - 1,
+  :electricity_usage => 150,
+  :petrol => 200,
+  :user_points => 30
+})
+user3.save!

@@ -7,7 +7,6 @@ padding-bottom: 1%;
 }
 
 .main-objects {
-    width: 60%;
     margin: 0 auto;
     border-radius: 25px;
     background-color: rgba(214, 213, 213, 0.8);
@@ -15,4 +14,12 @@ padding-bottom: 1%;
 
 .leaderboards {
     width:80%;
+}
+
+.text-gray {
+    color: darkslategray;
+}
+
+.leaderboard_entry {
+    margin-bottom: 5px;
 }
