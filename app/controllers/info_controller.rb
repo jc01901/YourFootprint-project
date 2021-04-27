@@ -55,5 +55,15 @@ class InfoController < ApplicationController
 		# @news_articles[x].urlToImage
 		# @news_articles[x].publishedAt
 
+    # n = NewsArticle.new(name: 'bob', age: '18')
+    n = NewsArticle.new(@news_articles[0])
+    puts "-----------"
+    puts n
+    puts "-----------"
+    puts n.name
+    puts "-----------"
+    puts n.age
+    puts "-----------"
+
   end
 end
