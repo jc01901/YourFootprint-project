@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_04_26_193346) do
 
-  create_table "user_data", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "user_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.date "date"
     t.integer "electricity_usage"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_26_193346) do
     t.index ["user_id"], name: "index_user_data_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
