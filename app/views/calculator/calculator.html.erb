@@ -3,20 +3,21 @@
     <div class="container p-5 main-container">
       <h1 class="display-2 text-center black">YourFootprint<small class="text-muted"> Calculator</small></h1>
       <hr>
-      <form>
+      <%= form_for :calculator, url: calculator_create_path, method: :get do |form| %>
+
         <div class="row">
           <div class="col-md-6 input-values">
             <h1 class="display-5 title">Input Amounts</h1>
             <div class="form-group row">
               <legend for="inputEmail3" class="col-sm-2 col-form-label pt-3">Power</legend>
               <div class="col-sm-6">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Enter Power Usage, kWh">
+                <%= form.text_field :power, class: "form-control", placeholder: "Enter Power Usage, kWh" %>
               </div>
             </div>
             <div class="form-group row pt-3">
               <legend for="inputEmail3" class="col-form-label col-sm-2 pt-3">Distance</legend>
               <div class="col-sm-6">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Enter Distance Travelled">
+                <%= form.text_field :distance, class: "form-control", placeholder: "Enter Distance Travelled" %>
               </div>
             </div>
           </div>
@@ -27,17 +28,13 @@
                 <legend class="col-form-label col-sm-2 pt-2">Fuel</legend>
                 <div class="col-sm-8">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="fuelRadios" id="fuelRadios1" value="option1"
-                      checked>
-                    <label class="form-check-label" for="gridRadios1">
-                      Petrol
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="fuelRadios" id="fuelRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                      Diesel
-                    </label>
+                    <%= form.radio_button :fuelRadios, "petrol", class: "form-check-input  col-sm-2" %>
+                    <%= form.label :petrol, "Petrol", class:" col-sm-6 offset-sm-2" %>
+                      
+                    
+                    <%= form.radio_button :fuelRadios, "diesel", class: "form-check-input  col-sm-2" %>
+                    <%= form.label :petrol, "Diesel", class:" col-sm-6 offset-sm-2" %>
+                    
                   </div>
                 </div>
               </div>
@@ -47,27 +44,37 @@
                 <legend class="col-form-label col-sm-2 pt-2">Distance</legend>
                 <div class="col-sm-8">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="option1"
-                      checked>
-                    <label class="form-check-label" for="gridRadios1">
-                      Kilometers
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                      Miles
-                    </label>
+                    <%= form.radio_button :distanceRadios, "kilometers", class: "form-check-input  col-sm-2" %>
+                    <%= form.label :kilometers, "Kilometers", class:" col-sm-6 offset-sm-2" %>
+                      
+                    
+                    <%= form.radio_button :distanceRadios, "miles", class: "form-check-input  col-sm-2" %>
+                    <%= form.label :miles, "Miles", class:" col-sm-6 offset-sm-2" %>
                   </div>
                 </div>
               </div>
             </fieldset>
           </div>
         </div>
+        <% if defined? @errors %>
+          <% @errors.each do |error| %>
+            <div class="alert alert-danger" role="alert">
+              <%= error %>
+            </div>
+          <% end %>
+        <% end %>
+        <% if defined? @success %>
+          <% @success.each do |success|%>
+            <div class="alert alert-success" role="alert">
+              <%= success %>
+            </div>
+          <% end %>
+        <% end %>
         <div class="form-group row pt-5">
-          <button type="submit" class="btn btn-light">Calculate Your Difference</button>
+          <%= form.submit "Calculate Your Difference" %>
         </div>
-      </form>
+          
+      <% end %>
     </div>
   </div>
 </main>

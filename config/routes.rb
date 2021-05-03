@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'profile/edit'
   get 'profile/change_password'
   get '/calculator', to: 'calculator#calculator'
+  get '/calculator/create', to: 'calculator#create'
   get 'home/home'
   get 'home/about'
   get 'about', to: 'home#about'
