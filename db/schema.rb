@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_172237) do
+ActiveRecord::Schema.define(version: 2021_04_26_193346) do
 
-  create_table "user_data", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "user_data", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.date "date"
     t.integer "electricity_usage"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_04_07_172237) do
     t.index ["user_id"], name: "index_user_data_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -31,7 +31,12 @@ ActiveRecord::Schema.define(version: 2021_04_07_172237) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.string "firstname"
+    t.string "surname"
+    t.date "dob"
+    t.string "post_code"
+    t.integer "lifetime_points"
+    t.index ["email"], name: "index_users_on_semail", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

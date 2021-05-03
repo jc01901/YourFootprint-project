@@ -7,6 +7,18 @@ form label, form input {
     margin: 10px; 
 }
 
+.bottom-bar {
+    position:relative;
+    bottom:0px;
+    background-color: rgba(214, 213, 213, 0.7);
+}
+
+@media only screen and (min-width: 992px) {
+    .bottom-bar {
+        position:sticky;
+    }
+}
+
 .green {
     background-color: green;
 }
@@ -74,12 +86,6 @@ form label, form input {
 .carousel-text {
     border-radius: 25px; 
     background-color:rgba(157, 223, 148, 0.4);
-}
-
-.bottom-bar {
-    bottom:0px;
-    position:absolute;
-    background-color: rgba(214, 213, 213, 0.7);
 }
 
 .live-pill {
