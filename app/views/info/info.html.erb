@@ -40,10 +40,10 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid" src=<%= @news_articles[x].urlToImage %> 
+                                <img class="img-fluid" src="<%= @news_articles[x].urlToImage %>" 
                                     style="box-sizing: border-box; max-width:auto; height:100%; object-fit: cover;
                                         border-radius:
-                                            0 <%= x==0                       ? '8px' : 0 %>
+                                            0 <%= x==0                         ? '8px' : 0 %>
                                               <%= x==@news_articles.length()-1 ? '8px' : 0 %> 0;" 
                                 >
                             </div>

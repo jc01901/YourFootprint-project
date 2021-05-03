@@ -23,8 +23,16 @@ done
 
 echo "DB is up ..."
 
+# Create all databases
+printf "\nCreating new databases ...\n"
+rake db:create
+
 # Migrate all pending db migrations
+printf "\nMigrating new databases ...\n"
+printf "[db:migrate]\n"
 rails db:migrate
+printf "[db:migrate RAILS_ENV=test]\n"
+rails db:migrate RAILS_ENV=test
 
 # Then exec the containers main process (what's set as CMD in the Dockerfile).
 exec "$@"
