@@ -9,7 +9,7 @@
     </div> 
 </div>
 <div class="row">
-    <div class="col-sm-8 offset-sm-2 text-center">
+    <div class="col-lg-4 offset-lg-2 text-center">
         <div class="jumbotron text-center p-5 main-objects">
             <h1 class="display-3">All Time</h1>
             <h3 class="h2 text-gray">
@@ -27,6 +27,31 @@
                             <% end %> 
                             <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-4' do %>
                                 <%= user.lifetime_points %>
+                            <% end %>
+                        </div>    
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4 text-center">
+        <div class="jumbotron text-center p-5 main-objects">
+            <h1 class="display-3">Weekly</h1>
+            <h3 class="h2 text-gray">
+                <small>Least CO2e emissions in the last week</small>
+            </h3>
+            <ul class="list-group">
+                <% @weekly_leaderboard_users.take(10).each_with_index do |user, count| %>
+                    <li class="list-group-item leaderboard_entry">
+                        <div class="row">
+                            <%= content_tag :p, :class => 'col-sm, col-sm-1' do %>
+                                <%= count+1 %>
+                            <% end %> 
+                            <%= content_tag :p, :class => 'col-sm col-sm-2 offset-sm-4' do %>
+                                <%= user[0].surname %>
+                            <% end %> 
+                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-4' do %>
+                                <%= user[1] %>
                             <% end %>
                         </div>    
                     </li>
