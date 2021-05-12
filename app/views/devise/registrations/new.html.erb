@@ -1,53 +1,62 @@
-<h2>Sign up</h2>
+<div class="row">
+    <div class="col-sm-8 offset-sm-2 text-center">
+        <div class="jumbotron text-center p-5 main-objects">
+            <h1 class="display-2">Sign up</h1>
+        </div>
+    </div> 
+</div>
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <div class="jumbotron p-5 main-objects">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+          
+            <div class="field text-center">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"  %>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :firstname %><br/>
+              <%= f.text_field :firstname,  autofocus: true, autocomplete: "name"%>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :surname %><br/>
+              <%= f.text_field :surname,  autofocus: true, autocomplete: "surname"%>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :dob %><br/>
+              <%= f.date_field :dob,  autofocus: true, autocomplete: "date of birth"%>
+            </div>
+          
+            <div class="field text-center">
+              <%= f.label :post_code %><br/>
+              <%= f.text_field :post_code,  autofocus: true, autocomplete: "post code"%>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email"  %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :firstname %><br/>
-    <%= f.text_field :firstname,  autofocus: true, autocomplete: "name"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :surname %><br/>
-    <%= f.text_field :surname,  autofocus: true, autocomplete: "surname"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :dob %><br/>
-    <%= f.date_field :dob,  autofocus: true, autocomplete: "date of birth"%>
-  </div>
-
-  <div class="field">
-    <%= f.label :post_code %><br/>
-    <%= f.text_field :post_code,  autofocus: true, autocomplete: "post code"%>
-  </div>
-
-
-
-
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+            <div class="actions">
+              <%= f.submit "Sign up", data: { confirm: 'Do you consent to giving us your data?' }%>
+            </div>
+          <% end %>
+        
+        </div>
+    </div> 
+</div>
 
 <%= render "devise/shared/links" %>
+<
