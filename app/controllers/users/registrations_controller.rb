@@ -7,7 +7,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_sign_up_params
     # perams.require(:user).permit(:email, :password, :name, :surname, :dob)
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :surname, :dob])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :surname, :dob, :post_code])
   end
 
   # GET /resource/sign_up
