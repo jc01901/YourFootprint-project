@@ -31,9 +31,9 @@ class UserTest < ActiveSupport::TestCase
 
   #Test user deletion
   test "user deletion" do
-    user = User.third
+    user = User.second
     user.destroy
-    deleted_user = User.third
+    deleted_user = User.second
 
     assert deleted_user.nil?, "User is not deleted"
   end

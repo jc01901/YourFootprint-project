@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post 'request_contact', to: 'home#request_contact'
   
   get 'profile', to: 'profile#profile'
-  get 'profile/edit'
+  # get 'profile/edit'
   get 'profile/change_password'
 
 end
