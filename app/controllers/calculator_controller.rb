@@ -16,8 +16,6 @@ class CalculatorController < ApplicationController
       distance = params["calculator"]["distance"].to_f()
       distance_type = params["calculator"]["distanceRadios"]
       fuel_type = params["calculator"]["fuelRadios"]
-      puts distance_type
-      puts fuel_type
       if distance_type.blank? || fuel_type.blank?
         if distance_type.blank?
           @errors.push("You must select a distance unit")
