@@ -72,3 +72,5 @@ gem 'json', '~> 2.5', '>= 2.5.1'
 
 gem 'news-api'
 gem 'time'
+
+gem "bootstrap_form", "~> 4.0"

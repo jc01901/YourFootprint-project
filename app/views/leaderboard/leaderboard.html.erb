@@ -1,7 +1,7 @@
-<div class="row">
+<div class="row pt-5">
     <div class="col-sm-8 offset-sm-2 text-center">
         <div class="jumbotron text-center p-5 main-objects">
-            <h1 class="display-2">Leaderboard</h1>
+            <h1 class="display-2 text-center black">YourFootprint<small class="text-muted"> Leaderboard</small></h1>
             <h3 class="h2 text-gray">
                 <small>See your impact compared to others</small>
             </h3>
@@ -15,17 +15,22 @@
             <h3 class="h2 text-gray">
                 <small>Least CO2e emissions lifetime</small>
             </h3>
+            <div class="row pt-3 mb-3" style="background-color:rgba(231, 130, 90, 0.8); border-radius: 10px; margin: 0; top: 50%; ">
+                <p class="col-sm col-sm-3 lead">Position</p>
+                <p class="col-sm col-sm-4 offset-sm-1  lead">Name</p>
+                <p class="col-sm col-sm-3 offset-sm-1 lead">Emisson</p>
+            </div>
             <ul class="list-group">
                 <% @all_time_leaderboard_users.take(10).each_with_index do |user, count| %>
-                    <li class="list-group-item leaderboard_entry">
-                        <div class="row">
-                            <%= content_tag :p, :class => 'col-sm, col-sm-1' do %>
+                        <li class="list-group-item leaderboard_entry pt-4" style="background-color:rgba(106, 228, 197, 0.6); border-radius: 10px;">
+                            <div class="row text-center">
+                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-1 lead' do %>
                                 <%= count+1 %>
                             <% end %> 
-                            <%= content_tag :p, :class => 'col-sm col-sm-2 offset-sm-4' do %>
+                            <%= content_tag :p, :class => 'col-sm col-sm-4 offset-sm-2 lead' do %>
                                 <%= user.surname %>
                             <% end %> 
-                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-4' do %>
+                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-2 lead' do %>
                                 <%= user.lifetime_points %>
                             <% end %>
                         </div>    
@@ -40,17 +45,22 @@
             <h3 class="h2 text-gray">
                 <small>Least CO2e emissions in the last week</small>
             </h3>
-            <ul class="list-group">
+            <div class="row pt-3 mb-3" style="background-color:rgba(231, 130, 90, 0.8); border-radius: 10px; margin: 0; top: 50%; ">
+                <p class="col-sm col-sm-3 lead">Position</p>
+                <p class="col-sm col-sm-4 offset-sm-1  lead">Name</p>
+                <p class="col-sm col-sm-3 offset-sm-1 lead">Emisson</p>
+            </div>
+            <ul class="list-group" >
                 <% @weekly_leaderboard_users.take(10).each_with_index do |user, count| %>
-                    <li class="list-group-item leaderboard_entry">
-                        <div class="row">
-                            <%= content_tag :p, :class => 'col-sm, col-sm-1' do %>
+                    <li class="list-group-item leaderboard_entry pt-4" style="background-color:rgba(106, 228, 197, 0.6); border-radius: 10px;">
+                        <div class="row text-center">
+                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-1 lead', :style => '' do %>
                                 <%= count+1 %>
                             <% end %> 
-                            <%= content_tag :p, :class => 'col-sm col-sm-2 offset-sm-4' do %>
+                            <%= content_tag :p, :class => 'col-sm col-sm-4 offset-sm-2 lead' do %>
                                 <%= user[0].surname %>
                             <% end %> 
-                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-4' do %>
+                            <%= content_tag :p, :class => 'col-sm col-sm-1 offset-sm-2 lead' do %>
                                 <%= user[1] %>
                             <% end %>
                         </div>    
