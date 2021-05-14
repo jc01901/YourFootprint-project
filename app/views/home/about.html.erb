@@ -6,19 +6,22 @@
 <p>Our goal at YourFootprint is to spread awareness on carbon footprint and want to encourage people to improve their energy efficiency on a day to day basis as it can have an impact on the world.
  Our platform will educate individuals the different sources of climate change and their impacts.</p>
     <h4>Contact form</h4>
+
+ 
+
     <form request_contact_path, action = "/request_contact", method = 'post'>
         
         <%= label_tag :name, "Enter name:" %>
-        <%= text_field_tag :name, '', title: t('.enter_name'), size: 50 %>
+        <%= text_field_tag :name, '', title: t('.enter_name'), size: 50, required: true %>
 
         <%= label_tag :email, "Enter email:" %>
-        <%= email_field_tag :email, '', title: t('.enter_email') %>
+        <%= email_field_tag :email, '', title: t('.enter_email'), required: true %>
 
         <%= label_tag :telephone, "Enter telephone number:" %>
-        <%= telephone_field_tag :telephone, '', title: t('.enter_telephone') %>
+        <%= telephone_field_tag :telephone, '', title: t('.enter_telephone'), required: true %>
 
         <%= label_tag :message, "Enter your message:" %>
-        <%= text_field_tag :message, '', title: t('.enter_message'), size: 100 %>
+        <%= text_field_tag :message, '', title: t('.enter_message'), size: 100, required: true, minlength: 20 %>
 
         <%= submit_tag "Submit" %>
     </form>
