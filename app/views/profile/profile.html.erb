@@ -5,30 +5,30 @@
       <br>
       <div class = "row">
         <div class = "reveal">
-          <% @users.each do |user| %>
             <label class="form-label" style = "font-size: 18px; font-weight:bold;">First Name:</label>
-            <input class="form-group form-control" value = <%= user.firstname %> readonly>
+            <input class="form-group form-control" value = <%=current_user.firstname%> readonly>
             <br>
             <br>
             <label class="form-label" style = "font-size: 18px; font-weight: bold;">Surname:</label>
-            <input class="form-group form-control" value = <%= user.surname%> readonly>
+            <input class="form-group form-control" value = <%=current_user.surname%> readonly>
             <br>
             <br>
             <label class="form-label" style = "font-size: 18px; font-weight:bold;">Date of Birth: </label>
-            <input class="form-group form-control" value = <%= user.dob %> readonly>
+            <input class="form-group form-control" value = <%=current_user.dob%> readonly>
             <br>
             <br>
             <label class="form-label" style="font-size: 18px; font-weight: bold;">Postcode:</label>
-            <input class="form-group form-control" value = <%=user.post_code%> readonly>
+            <input class="form-group form-control" value = <%=current_user.post_code%> readonly>
             <br>
             <br>
             <label class="form-label" style="font-size: 18px; font-weight: bold;">Email:</label>
-            <input class="form-group form-control" value = <%=user.email%> readonly>
+            <input class="form-group form-control" value = <%=current_user.email%> readonly>
             <br>
             <br>
             <label class="form-label" style="font-size: 18px; font-weight: bold;">Password:</label>
             <input class="form-control" placeholder="••••••••••••••••••" disabled readonly>
-          <%end%>
+            <br>
+            <br>
           <br>
           <br>
         </div>
