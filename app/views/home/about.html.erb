@@ -11,19 +11,19 @@
 
     <form request_contact_path, action = "/request_contact", method = 'post'>
         
-        <%= label_tag :name, "Enter name:" %>
-        <%= text_field_tag :name, '', title: t('.enter_name'), size: 50, required: true %>
+        <%= label_tag :name, "Name" %>
+        <%= text_field_tag :name, '', title: t('.enter_name'), size: 50, required: true, placeholder: "Enter Name", class: "form-control p-2" %>
 
-        <%= label_tag :email, "Enter email:" %>
-        <%= email_field_tag :email, '', title: t('.enter_email'), required: true %>
+        <%= label_tag :email, "Email" %>
+        <%= email_field_tag :email, '', title: t('.enter_email'), required: true, placeholder: "Enter Email", class: "form-control p-2" %>
 
-        <%= label_tag :telephone, "Enter telephone number:" %>
-        <%= telephone_field_tag :telephone, '', title: t('.enter_telephone'), required: true %>
+        <%= label_tag :telephone, "Phone Number" %>
+        <%= telephone_field_tag :telephone, '', title: t('.enter_telephone'), type: "number", required: true, placeholder: "Enter Phone #", class: "form-control p-2" %>
 
-        <%= label_tag :message, "Enter your message:" %>
-        <%= text_field_tag :message, '', title: t('.enter_message'), size: 100, required: true, minlength: 20 %>
+        <%= label_tag :message, "Message" %>
+        <%= text_field_tag :message, '', title: t('.enter_message'), rows: "10", cols: "30", size: 100, required: true, minlength: 20, placeholder: "Type your message here...", class: "form-control p-2" %>
 
-        <%= submit_tag "Submit" %>
+        <%= submit_tag "Submit", class: "btn btn-light" %>
     </form>
 
     </div>
