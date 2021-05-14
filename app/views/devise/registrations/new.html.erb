@@ -1,4 +1,14 @@
-<div class="row">
+<script type="text/javascript">
+
+  window.onload = function() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+
+
+  }
+
+</script>
+<body class="h-100">
+<div class="row pt-5">
     <div class="col-sm-8 offset-sm-2 text-center">
         <div class="jumbotron text-center p-5 main-objects">
             <h1 class="display-2">Sign up</h1>
@@ -8,55 +18,79 @@
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
         <div class="jumbotron p-5 main-objects">
+
+
+          <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <%= f.email_field :email, autofocus: false, autocomplete: "email", placeholder: "Enter Email" %>
+          
+          <%= f.password_field :password,  autocomplete: "new-password", placeholder: "Enter Password"  %>
+
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Re-Enter Password" %>
+          <%= f.text_field :firstname,  autofocus: false, autocomplete: "name", placeholder: "Enter First Name" %>
+          <%= f.text_field :surname,  autofocus: false, autocomplete: "surname", placeholder: "Enter Surname"%>
+
+          <%= f.date_field :dob,  autofocus: false, autocomplete: "date of birth"%>
+          <%= f.text_field :post_code,  autofocus: false, autocomplete: "post code", placeholder: "Enter Post Code"%>
+          <%= f.submit "Sign up", data: { confirm: 'Do you consent to giving us your data?' } %>
+
+          <% end %>
+          <%= render "devise/shared/links" %>
+        </div>
+        </div>
+        </div>
+
+        </body>
+
+        <!--
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
           
             <div class="field text-center">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: "email"  %>
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email"  %><br />
             </div>
           
             <div class="field text-center">
               <%= f.label :password %>
               <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
-              <%= f.password_field :password, autocomplete: "new-password" %>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "new-password" %><br />
             </div>
           
             <div class="field text-center">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br />
             </div>
           
             <div class="field text-center">
-              <%= f.label :firstname %><br/>
-              <%= f.text_field :firstname,  autofocus: true, autocomplete: "name"%>
+              <%= f.label :firstname %>
+              <%= f.text_field :firstname,  autofocus: true, autocomplete: "name"%><br/>
             </div>
           
             <div class="field text-center">
-              <%= f.label :surname %><br/>
-              <%= f.text_field :surname,  autofocus: true, autocomplete: "surname"%>
+              <%= f.label :surname %>
+              <%= f.text_field :surname,  autofocus: true, autocomplete: "surname"%><br/>
             </div>
           
             <div class="field text-center">
-              <%= f.label :dob %><br/>
-              <%= f.date_field :dob,  autofocus: true, autocomplete: "date of birth"%>
+              <%= f.label :date_of_birth %>
+              <%= f.date_field :dob,  autofocus: true, autocomplete: "date of birth"%><br/>
             </div>
           
             <div class="field text-center">
-              <%= f.label :post_code %><br/>
-              <%= f.text_field :post_code,  autofocus: true, autocomplete: "post code"%>
+              <%= f.label :post_code %>
+              <%= f.text_field :post_code,  autofocus: true, autocomplete: "post code"%><br/>
             </div>
 
             <div class="actions">
               <%= f.submit "Sign up", data: { confirm: 'Do you consent to giving us your data?' }%>
             </div>
           <% end %>
+
+          <%= render "devise/shared/links" %>
         
         </div>
     </div> 
 </div>
-
-<%= render "devise/shared/links" %>
-<

@@ -1,7 +1,7 @@
 <div class="row pt-3 pb-3 air-quality">
 	<div class="container text-center" style="background-color: <%= @box_colour %>;border-radius: 25px;">
-		<h3 class="font-shape pt-1 air-quality-text"><a href="/weather" class="link-style">Current air quality in the UK: <%= @final_output %></a></h3>
-		    <span class="badge rounded-pill bg-info text-dark live-pill">Live!</span>
+		<h3 class="font-shape pt-1 air-quality-text">Current air quality in the UK: <%= @final_output %></h3>
+		    <span class="badge rounded-pill bg-info text-dark live-pill" style="position: relative; bottom: 6px;">Live!</span>
 		<h5 class="font-shape air-quality-text-sub" style="<%= @box_colour=='yellow' ? 'color:black' : '' %>">The air quality ranges from 0-500 depending on the current air quality in the area</h3>
 	</div>
 </div>

@@ -2,12 +2,16 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:update]
 
 
   def configure_sign_up_params
     # perams.require(:user).permit(:email, :password, :name, :surname, :dob)
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :surname, :dob])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:firstname, :surname, :dob, :post_code])
+  end
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :surname, :dob, :post_code])
   end
 
   # GET /resource/sign_up

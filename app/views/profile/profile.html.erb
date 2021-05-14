@@ -1,8 +1,41 @@
-<div class="row pt-5" style="margin:0 auto; width:70%;">
-<div class="container p-5" style="border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
-<div class="container1">
-<%= image_tag "unknownProf1.png", :class => "profile" %>
-<button class="btn">Edit</button>
-</div>
-</div>
+<div class="row pt-5 main-row">
+    <div class="container p-5 main-container" style = "margin: 10px">
+      <h1 class="display-2 text-center black" style = "font-size: 100px; font-weight: bolder; color: grey;">Your Profile</h1>
+      <br>
+      <br>
+      <div class = "row">
+        <div class = "reveal">
+            <label class="form-label" style = "font-size: 18px; font-weight:bold;">First Name:</label>
+            <input class="form-group form-control" value = <%=current_user.firstname%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style = "font-size: 18px; font-weight: bold;">Surname:</label>
+            <input class="form-group form-control" value = <%=current_user.surname%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style = "font-size: 18px; font-weight:bold;">Date of Birth: </label>
+            <input class="form-group form-control" value = <%=current_user.dob%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Postcode:</label>
+            <input class="form-group form-control" value = <%=current_user.post_code%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Email:</label>
+            <input class="form-group form-control" value = <%=current_user.email%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Password:</label>
+            <input class="form-control" placeholder="••••••••••••••••••" disabled readonly>
+            <br>
+            <br>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="d-grid col-6 mx-auto">
+        <%= link_to 'Edit Profile', devise_passwords_edit_path, class: "btn btn-primary reveal" %>
+      </div>
+    </div>
+
 </div>
