@@ -7,39 +7,19 @@
         <div class="flex-item px-5">
             <%= image_tag "unknownProf1.png", :class => "profile" %>
         </div>
-        <div class="flex-item px-5" style="font-size: 24px">
-            <div class="flex-item justify-content-between py-1">
-                Name:
+        <div class="flex-item flex-row px-5" style="flex-grow: 1">
+            <div class="d-flex justify-content-between py-1" style="font-size: 30px">
+                <div><%= current_user.firstname %> <%= current_user.surname %></div>
+                <div><%= current_user.email %></div>
             </div>
             <div class="flex-item justify-content-between py-1">
-                Email:
+                <div>Date of birth: <b><%= current_user.dob %></b></div>
             </div>
             <div class="flex-item justify-content-between py-1">
-                Date of Birth:
+                <div>Post code: <b><%= current_user.post_code %></b></div>
             </div>
-            <div class="flex-item justify-content-between py-1">
-                Post code:
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                Lifetime points:
-            </div>
-        </div>
-        <div class="flex-item px-5" style="flex-grow: 1; font-size: 24px">
-            <div class="flex-item justify-content-between py-1">
-                <%= current_user.firstname %>
-                <%= current_user.surname %>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <%= current_user.email %>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <%= current_user.dob %>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <%= current_user.post_code %>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <%= current_user.lifetime_points %>
+            <div class="flex-item justify-content-between pt-4" style="font-size: 30px">
+                <div>Lifetime points: <%= current_user.lifetime_points %></div>
             </div>
         </div>
     </div>
