@@ -1,31 +1,41 @@
-<div class="row pt-5" style="margin:0 auto; width:70%;">
-<div class="container p-5" style="border-radius: 25px; background-color: rgba(214, 213, 213, 0.8)">
-<div class="container1">
-
-<div class="d-flex flex-column">
-    <div class="d-flex">
-        <div class="flex-item px-5">
-            <%= image_tag "unknownProf1.png", :class => "profile" %>
+<div class="row pt-5 main-row">
+    <div class="container p-5 main-container" style = "margin: 10px">
+      <h1 class="display-2 text-center black" style = "font-size: 100px; font-weight: bolder; color: grey;">Your Profile</h1>
+      <br>
+      <br>
+      <div class = "row">
+        <div class = "reveal">
+          <% @users.each do |user| %>
+            <label class="form-label" style = "font-size: 18px; font-weight:bold;">First Name:</label>
+            <input class="form-group form-control" value = <%= user.firstname %> readonly>
+            <br>
+            <br>
+            <label class="form-label" style = "font-size: 18px; font-weight: bold;">Surname:</label>
+            <input class="form-group form-control" value = <%= user.surname%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style = "font-size: 18px; font-weight:bold;">Date of Birth: </label>
+            <input class="form-group form-control" value = <%= user.dob %> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Postcode:</label>
+            <input class="form-group form-control" value = <%=user.post_code%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Email:</label>
+            <input class="form-group form-control" value = <%=user.email%> readonly>
+            <br>
+            <br>
+            <label class="form-label" style="font-size: 18px; font-weight: bold;">Password:</label>
+            <input class="form-control" placeholder="••••••••••••••••••" disabled readonly>
+          <%end%>
+          <br>
+          <br>
         </div>
-        <div class="flex-item flex-row px-5" style="flex-grow: 1">
-            <div class="d-flex justify-content-between py-1" style="font-size: 30px">
-                <div><%= current_user.firstname %> <%= current_user.surname %></div>
-                <div><%= current_user.email %></div>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <div>Date of birth: <b><%= current_user.dob %></b></div>
-            </div>
-            <div class="flex-item justify-content-between py-1">
-                <div>Post code: <b><%= current_user.post_code %></b></div>
-            </div>
-            <div class="flex-item justify-content-between pt-4" style="font-size: 30px">
-                <div>Lifetime points: <%= current_user.lifetime_points %></div>
-            </div>
-        </div>
+      </div>
+      <div class="d-grid col-6 mx-auto">
+        <%= link_to 'Edit Profile', devise_passwords_edit_path, class: "btn btn-primary reveal" %>
+      </div>
     </div>
-</div>
 
-<a type="button"  href="/users/edit" class="btn">Edit</a>
-</div>
-</div>
 </div>

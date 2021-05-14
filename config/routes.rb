@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # get 'weather', to: 'weather#weather'
   get 'leaderboard', to: 'leaderboard#leaderboard'
   get 'about', to: 'home#about'
+  get 'devise/passwords/edit'
   post 'request_contact', to: 'home#request_contact'
   
   get 'profile', to: 'profile#profile'
