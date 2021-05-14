@@ -6,27 +6,30 @@
       <div class = "row">
         <div class = "reveal">
             <label class="form-label" style = "font-size: 18px; font-weight:bold;">First Name:</label>
-            <input class="form-group form-control" value = <%=current_user.firstname%> readonly>
+            <input class="form-group form-control" value = "<%=current_user.firstname%>" readonly>
             <br>
             <br>
             <label class="form-label" style = "font-size: 18px; font-weight: bold;">Surname:</label>
-            <input class="form-group form-control" value = <%=current_user.surname%> readonly>
+            <input class="form-group form-control" value = "<%=current_user.surname%>" readonly>
             <br>
             <br>
             <label class="form-label" style = "font-size: 18px; font-weight:bold;">Date of Birth: </label>
-            <input class="form-group form-control" value = <%=current_user.dob%> readonly>
+            <input class="form-group form-control" value = "<%=current_user.dob%>" readonly>
             <br>
             <br>
             <label class="form-label" style="font-size: 18px; font-weight: bold;">Postcode:</label>
-            <input class="form-group form-control" value = <%=current_user.post_code%> readonly>
+            <input class="form-group form-control" value = "<%=current_user.post_code%>" readonly>
             <br>
             <br>
             <label class="form-label" style="font-size: 18px; font-weight: bold;">Email:</label>
-            <input class="form-group form-control" value = <%=current_user.email%> readonly>
+            <input class="form-group form-control" value = "<%=current_user.email%>" readonly>
             <br>
             <br>
-            <label class="form-label" style="font-size: 18px; font-weight: bold;">Password:</label>
-            <input class="form-control" placeholder="••••••••••••••••••" disabled readonly>
+            <div class="row">
+              <div class="col-sm-2 offset-sm-5 alert alert-success text-center">
+                <p>Lifetime points: <%=current_user.lifetime_points%></p>
+              </div>
+            </div>
             <br>
             <br>
           <br>
@@ -34,7 +37,7 @@
         </div>
       </div>
       <div class="d-grid col-6 mx-auto">
-        <%= link_to 'Edit Profile', devise_passwords_edit_path, class: "btn btn-primary reveal" %>
+        <%= link_to 'Edit Profile', url="/users/edit", class: "btn btn-primary reveal" %>
       </div>
     </div>
 
