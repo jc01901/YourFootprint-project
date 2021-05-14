@@ -6,4 +6,12 @@ class InfoControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  # test "should output article data" do
+  #   get information_url
+
+  #   assigns(:news_articles)
+
+  #   assert true
+  # end
+
 end
