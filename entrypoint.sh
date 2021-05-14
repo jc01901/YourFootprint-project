@@ -35,7 +35,8 @@ printf "[db:migrate RAILS_ENV=test]\n"
 rails db:migrate RAILS_ENV=test
 
 # Push seeds into database
-printf "\nPushing seeds to database ...\n\n"
+printf "\nPushing seeds to database ...\n"
+printf "[rake db:seed]\n"
 rake db:seed
 
 printf "\n------------------------\n"
