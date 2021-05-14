@@ -21,7 +21,7 @@ module LeaderboardHelper
       end
       eligible_users.push([user, weekly_points])
     end
-    eligible_users.sort_by(&:last)
+    eligible_users = eligible_users.sort_by(&:last)
     return eligible_users
   end
 end
