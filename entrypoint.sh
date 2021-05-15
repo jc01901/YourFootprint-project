@@ -36,11 +36,12 @@ rails db:migrate RAILS_ENV=test
 
 # Push seeds into database
 printf "\nPushing seeds to database ...\n"
-printf "[rake db:seed]\n"
-rake db:seed
+printf "[rake db:setup]\n"
+rake db:setup
 
 printf "\n------------------------\n"
 printf "Completed database setup\nStarting server ...\n\n"
+printf "hosted on: localhost:3000\n"
 
 # Then exec the containers main process (what's set as CMD in the Dockerfile).
 exec "$@"
