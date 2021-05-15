@@ -1,44 +1,35 @@
 <div class="row pt-5 main-row">
     <div class="container p-5 main-container" style = "margin: 10px">
-      <h1 class="display-2 text-center black" style = "font-size: 100px; font-weight: bolder; color: grey;">Your Profile</h1>
-      <br>
-      <br>
-      <div class = "row">
-        <div class = "reveal">
-            <label class="form-label" style = "font-size: 18px; font-weight:bold;">First Name:</label>
-            <input class="form-group form-control" value = "<%=current_user.firstname%>" readonly>
-            <br>
-            <br>
-            <label class="form-label" style = "font-size: 18px; font-weight: bold;">Surname:</label>
-            <input class="form-group form-control" value = "<%=current_user.surname%>" readonly>
-            <br>
-            <br>
-            <label class="form-label" style = "font-size: 18px; font-weight:bold;">Date of Birth: </label>
-            <input class="form-group form-control" value = "<%=current_user.dob%>" readonly>
-            <br>
-            <br>
-            <label class="form-label" style="font-size: 18px; font-weight: bold;">Postcode:</label>
-            <input class="form-group form-control" value = "<%=current_user.post_code%>" readonly>
-            <br>
-            <br>
-            <label class="form-label" style="font-size: 18px; font-weight: bold;">Email:</label>
-            <input class="form-group form-control" value = "<%=current_user.email%>" readonly>
-            <br>
-            <br>
-            <div class="row">
-              <div class="col-sm-2 offset-sm-5 alert alert-success text-center">
-                <p>Lifetime points: <%=current_user.lifetime_points%></p>
-              </div>
-            </div>
-            <br>
-            <br>
-          <br>
-          <br>
+      <h1 class="display-2 text-center black" style="display: inline-block; border-right: 1px solid black; padding-right: 20px;">YourFootprint<small class="text-muted"> Profile</small></h1>
+      <%= link_to 'Change Profile Information', url="/users/edit", class: "btn btn-info btn-lg", style: "dislpay:inline-block; position:relative; bottom: 20px; left: 20px; padding: 10px; border-radius:20px; font-size:20px;" %>
+
+      <div class = "row pt-3 text-center mt-3 p-4" style="background-color:rgba(157, 223, 148, 0.6); border-radius: 10px;">
+        <div class="col-md-2" >
+          <label class="form-label lead " style = "font-size: 30px;">First Name</label>
+          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.firstname %></p>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label lead " style = "font-size: 30px;">Surname</label>
+          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.surname %></p>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label lead " style = "font-size: 30px;">Date of Birth</label>
+          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.dob %></p>
+        </div>
+        <div class="col-md-2" >
+          <label class="form-label lead " style="font-size: 30px;">Postcode</label>
+          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.post_code %></p>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label lead " style="font-size: 30px;">Email</label>
+          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.email %></p>
         </div>
       </div>
-      <div class="d-grid col-6 mx-auto">
-        <%= link_to 'Edit Profile', url="/users/edit", class: "btn btn-primary reveal" %>
-      </div>
+            <div class="row mt-5">
+              <div class="col-sm-8 offset-sm-2 alert alert-success text-center pt-4" style="border-radius: 10px;">
+                <p class="lead" style="font-size: 25px;">Congratulations <%=current_user.firstname%>, you have <strong><%=current_user.lifetime_points%></strong> lifetime points!</p>
+              </div>
+            </div>
     </div>
 
 </div>
