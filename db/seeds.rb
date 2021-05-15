@@ -41,15 +41,23 @@ user2 = User.create({
   :surname => "Wall",
   :dob => "13/03/1999",
   :post_code => "GU2 I4L",
-  :lifetime_points => 16
+  :lifetime_points => 26
+})
+
+user2.user_data.create({
+  :date => DateTime.current - 2,
+  :electricity_usage => 100,
+  :petrol => 200,
+  :user_points => 16
 })
 
 user2.user_data.create({
   :date => DateTime.current - 1,
   :electricity_usage => 100,
   :petrol => 200,
-  :user_points => 16
+  :user_points => 10
 })
+
 user2.save!
 
 user3 = User.create({
