@@ -23,21 +23,35 @@ done
 
 echo "DB is up ..."
 
-# Create all databases
-printf "\nCreating new databases ...\n"
-rake db:create
+# # Dropping existing db
+# printf "\nDropping exising db ...\n"
+# rake db:drop
 
-# Migrate all pending db migrations
-printf "\nMigrating new databases ...\n"
-printf "[db:migrate]\n"
-rails db:migrate
-printf "[db:migrate RAILS_ENV=test]\n"
-rails db:migrate RAILS_ENV=test
+# # Create all databases
+# printf "\nCreating new databases ...\n"
+# rake db:create
 
-# Push seeds into database
+# # Migrate all pending db migrations
+# printf "\nMigrating new databases ...\n"
+# printf "[db:migrate]\n"
+# rails db:migrate
+# printf "[db:migrate RAILS_ENV=test]\n"
+# rails db:migrate RAILS_ENV=test
+
+# # Push seeds into database
+# printf "\nPushing seeds to database ...\n"
+# printf "[rake db:seed]\n"
+# rake db:seed
+
+# Reseting database (dropping previous, creating and migrating fresh db)
+printf "\nResetting database ...\n"
+printf "[db:migrate:reset] => [db:drop]-[db:create]-[db:migrate]\n"
+rake db:migrate:reset
+
+# Pushing seeds into database
 printf "\nPushing seeds to database ...\n"
-printf "[rake db:seed]\n"
-rake db:seed
+printf "[db:setup] => [db:schema:load]-[db:seed]\n"
+rake db:setup
 
 printf "\n------------------------\n"
 printf "Completed database setup\nStarting server ...\n\n"
