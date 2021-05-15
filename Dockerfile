@@ -10,7 +10,7 @@ RUN apt-get install -y dos2unix
 RUN echo "export PATH=\"$PATH:/usr/local/bundle/bin\"" >> ~/.bashrc
 
 WORKDIR /app
-COPY Gemfile /app/Gemfile
+COPY Gemfile* /app/
 RUN bundle install
 COPY . /app
 
