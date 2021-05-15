@@ -1,35 +1,60 @@
 <div class="row pt-5 main-row">
     <div class="container p-5 main-container" style = "margin: 10px">
       <h1 class="display-2 text-center black" style="display: inline-block; border-right: 1px solid black; padding-right: 20px;">YourFootprint<small class="text-muted"> Profile</small></h1>
-      <%= link_to 'Change Profile Information', url="/users/edit", class: "btn btn-info btn-lg", style: "dislpay:inline-block; position:relative; bottom: 20px; left: 20px; padding: 10px; border-radius:20px; font-size:20px;" %>
+      <%= link_to 'Change Profile Information', url="/users/edit", class: "alert alert-success", style: "color:inherit;text-decoration:none;dislpay:inline-block; position:relative; bottom: 20px; left: 20px; padding: 10px; border-radius:20px; font-size:20px;" %>
 
-      <div class = "row pt-3 text-center mt-3 p-4" style="background-color:rgba(157, 223, 148, 0.6); border-radius: 10px;">
-        <div class="col-md-2" >
-          <label class="form-label lead " style = "font-size: 30px;">First Name</label>
-          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.firstname %></p>
+      <div class = "row mt-3 pt-5">
+        <div class="col-lg-6 pt-4" style="background-color:rgba(68, 155, 255, 0.6); border-radius: 10px;">
+        <div class="row" >
+          <p class="lead text-center al" style="font-size: 30px;">Your Details</p>
+          <hr>
+          <div class="col-md-3 pt-2">
+            <label class="form-label lead " style = "font-size: 20px;display: inline-block;">First Name</label>
+          </div>
+          <div class="col-md-6">
+            <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px; width: max-content; display: inline-block;"><%=current_user.firstname %></p>
+          </div>
         </div>
-        <div class="col-md-2">
-          <label class="form-label lead " style = "font-size: 30px;">Surname</label>
-          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.surname %></p>
+        <div class="row">
+          <div class="col-md-3 pt-2">
+            <label class="form-label lead " style = "font-size: 20px;display: inline-block;">Surname</label>
+          </div>
+          <div class="col-md-6">
+            <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px; width: max-content; display: inline-block;"><%=current_user.surname %></p>
+          </div>
         </div>
-        <div class="col-md-2">
-          <label class="form-label lead " style = "font-size: 30px;">Date of Birth</label>
-          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.dob %></p>
+        <div class="row">
+          <div class="col-md-3 pt-2">
+            <label class="form-label lead " style = "font-size: 20px;display: inline-block;">Date of Birth</label>
+          </div>
+          <div class="col-md-6">
+            <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px; width: max-content; display: inline-block;"><%=current_user.dob %></p>
+          </div>
         </div>
-        <div class="col-md-2" >
-          <label class="form-label lead " style="font-size: 30px;">Postcode</label>
-          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.post_code %></p>
+        <div class="row" >
+          <div class="col-md-3 pt-2">
+            <label class="form-label lead " style="font-size: 20px;display: inline-block;">Postcode</label>
+          </div>
+          <div class="col-md-6">
+            <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px; width: max-content; display: inline-block;"><%=current_user.post_code %></p>
+          </div>
         </div>
-        <div class="col-md-4">
-          <label class="form-label lead " style="font-size: 30px;">Email</label>
-          <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px;"><%=current_user.email %></p>
+        <div class="row">
+          <div class="col-md-3 pt-2">
+            <label class="form-label lead " style="font-size: 20px;display: inline-block;">Email</label>
+          </div>
+          <div class="col-md-6">
+            <p class="lead" style="border: 1px solid black; border-radius: 20px; padding: 10px; width: max-content; display: inline-block;"><%=current_user.email %></p>
+          </div>
         </div>
       </div>
-            <div class="row mt-5">
-              <div class="col-sm-8 offset-sm-2 alert alert-success text-center pt-4" style="border-radius: 10px;">
-                <p class="lead" style="font-size: 25px;">Congratulations <%=current_user.firstname%>, you have <strong><%=current_user.lifetime_points%></strong> lifetime points!</p>
-              </div>
-            </div>
+      <div class="col-md-5 offset-sm-1 alert alert-success text-center pt-4 h-50 align-self-center" style="border-radius: 10px;">
+        <p class="lead" style="font-size: 20px;">Congratulations <%=current_user.firstname%>,<br><br>You currently have <strong><%=current_user.lifetime_points%></strong> lifetime points!</p>
+       <br><br>
+        <p class="lead">Made a difference today? Grab some points!</p>
+        <a class="btn btn-outline-success" href="/calculator">Calculator</a>
+      </div>
+      </div>
     </div>
 
 </div>
