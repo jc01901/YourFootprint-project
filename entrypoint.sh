@@ -46,16 +46,16 @@ echo "DB is up ..."
 # Reseting database (dropping previous, creating and migrating fresh db)
 printf "\nResetting database ...\n"
 printf "[db:migrate:reset] => [db:drop]-[db:create]-[db:migrate]\n"
-rake db:migrate:reset
+rails db:migrate:reset
 
 # Pushing seeds into database
 printf "\nPushing seeds to database ...\n"
 printf "[db:setup] => [db:schema:load]-[db:seed]\n"
-rake db:setup
+rails db:setup
 
 printf "\n------------------------\n"
-printf "Completed database setup\nStarting server ...\n\n"
-printf "hosted on: localhost:3000\n"
+printf "Completed database setup\nStarting server ...\n"
+printf "hosted on: localhost:3000\n\n"
 
 # Then exec the containers main process (what's set as CMD in the Dockerfile).
 exec "$@"
