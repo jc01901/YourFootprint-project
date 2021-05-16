@@ -1,4 +1,25 @@
 # YourFootprint - Group 17
+## Initial Setup
+### Creating the image
+This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:
+```bash
+docker-compose up --build 
+```
+### Running bash on rails container
+After the command finishes running open other terminal window and run the following command to open bash inside the container:
+```bash
+docker exec -it yourfootprint-group-17_web_1 /bin/bash -il
+```
+### Accessing the database from inside the rails container
+To access the database from the rails container you must first access the rails container using [this](#running-bash) command, then type:
+```bash
+rails db
+```
+The password is currently: "group17"
+
+### News API
+#### Query limit
+There is a query limit of 100 per day, so try to keep usage to a minimum
 ## Adding to the readme
 When editing use this as a guide: https://guides.github.com/features/mastering-markdown/
 
@@ -8,32 +29,7 @@ For example:
 ```bash
 your code here
 ```
-
-## Initial Setup
-### Creating the image
-This command will build the docker image, and then run it in a container, and a rails server will be hosted on localhost:3000:
-```bash
-docker-compose up --build 
-```
-## Running bash on rails container
-After the command finishes running open other terminal window and run the following command to open bash inside the container:
-```bash
-docker exec -it yourfootprint-group-17_web_1 /bin/bash -il
-```
-## Database
-### Rails container
-To access the database from the rails container you must first access the rails container using [this](#running-bash) command, then type:
-```bash
-rails db
-```
-The password is currently: "admin"
-
 ## Troubleshooting
-### Rails container
-This command will spin up a new container using the image created in [this](#creating-the-image) command (used for debugging mainly):
-```bash
-docker run -it --rm yourfootprint /bin/bash -il
-```
 ### MySQL container
 To access the database container directly use:
 ```bash
@@ -54,9 +50,6 @@ you need to create the database, while using the mysql terminal use this command
 create database
 ```
 
-### News API
-#### Query limit
-There is a query limit of 100 per day, so try to keep usage to a minimum
 ### Linux troubleshoot
 #### Files owned by root
 If files end up owned by root the following should be run to make current user owner of all files
