@@ -5,7 +5,7 @@
 		<h5 class="font-shape air-quality-text-sub" style="<%= @box_colour=='yellow' ? 'color:black' : '' %>">The air quality ranges from 0-500 depending on the current air quality in the area</h3>
 	</div>
 </div>
-<div class="row w3-animate-top" style="flex-grow: 1;">
+<div class="row" style="flex-grow: 1;">
 	<div class="container-fluid text-center">
 		<div class="jumbotron text-center p-5 col-sm-8 offset-sm-2 main-content">
 			<h1 class="font-shape display-2">Welcome to <a class="btn btn-dark btn-lg"><span class="display-5">YourFootprint</span></a></h1>
@@ -45,19 +45,8 @@
 	</div>
 	<div class="col-md-3">
 		<h1 class="font-shape">Quick Sign Up</h1>
-		<h5><small class="subtitle">Sign up now and get access to your calculator and leaderboard</small></h5>
-		<h5><small class="subtitle">Help protect the planet today</small></h5>
-		<form>
-			<%# <div class="form-group mb-3">
-				<div class="col-md-12">
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-				</div>
-			</div>
-			<div class="form-group mb-3 col-md-12">
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			</div> %>
-			<a class="btn btn-success btn-md mr-4 mt-3" href=<%=new_user_registration_path%> role="button">Sign Up now to make a difference</a>
-		</form>
+		<h5 class="pb-3"><small class="subtitle">Sign up now and get access to your calculator and leaderboard. Help protect the planet today</small></h5>
+			<a class="btn btn-success btn-md mr-4 mt-4" href=<%=new_user_registration_path%> role="button">Sign Up now to make a difference</a>
 	</div>
 </div>
 <!--

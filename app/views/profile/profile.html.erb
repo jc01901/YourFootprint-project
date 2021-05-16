@@ -48,13 +48,14 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 offset-sm-1 alert alert-success text-center pt-4 h-50 align-self-center" style="border-radius: 10px;">
-        <p class="lead" style="font-size: 20px;">Congratulations <%=current_user.firstname%>,<br><br>You currently have <strong><%=current_user.lifetime_points%></strong> lifetime points!</p>
+      <div class="col-md-5 offset-sm-1 text-center pt-4 h-50 align-self-center" style="border-radius: 10px;">
+        <p class="lead alert alert-success " style="font-size: 20px;"><%=current_user.firstname%>,<br><br>You currently have <strong><%=current_user.lifetime_points%></strong> lifetime points!</p>
        <br><br>
-        <p class="lead">Made a difference today? Grab some points!</p>
-        <a class="btn btn-outline-success" href="/calculator">Calculator</a>
+        <p class="lead alert alert-warning p-3" style="font-size:15px;"><em>Made a difference today? Grab some points!</em><br>        <a class="btn btn-outline-success mt-3" href="/calculator">Calculator</a>
+        </p>
       </div>
       </div>
+
     </div>
 
 </div>
