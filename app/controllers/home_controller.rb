@@ -43,6 +43,9 @@ class HomeController < ApplicationController
   def about
   end
 
+  def terms
+  end
+
   def request_contact
     name = params[:name]
     email = params[:email]

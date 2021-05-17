@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get 'profile', to: 'profile#profile'
   get 'profile/change_password'
 
+  get 'termsandconditions', to: 'home#terms'
+
 end

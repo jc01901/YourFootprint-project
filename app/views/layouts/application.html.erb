@@ -21,10 +21,12 @@
         <%= content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank? %>
       </div>
     <% end %>
-    <div class="d-flex flex-column" style="height:100%">
+    <div class="d-flex flex-column" style="height:100%;">
       <%= render "home/nav" %>
       <%= yield %>
+      <%= render "home/terms" %>
     </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
