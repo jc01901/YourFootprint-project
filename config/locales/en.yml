@@ -21,3 +21,35 @@
 
 en:
   hello: "Hello world"
+  T_and_C:
+    title: "Terms and Conditions"
+    title1: "Disclaimer"
+    p1: "This website is provided by YourFootprint. Behind this website there are 7 students which created this webpage to benefit the society.
+
+    The initial concept of the website was to help people understand their personal impact on the world's climate. This both fulfills the requirement to represent a potential benefit to society and is an extremely important global issue. Since 2000 nineteen of the warmest years have occurred since record-keeping began in 1880. The aim of this project is to educate people about their CO2 footprint and how to show more care about the environment. We will develop a website with many interactive features in order to bring up the awareness of this global problem.
+
+    YourFootprint has taken reasonable care to guarantee that information is accurate at the time it was added to this web site. This webpage is intended to provide information and encourage the public to decrease the usage of electricity and fossil fuels.
+
+    YourFootprint will not be liable for any damage that was caused using this website."
+
+    title2: "User Data"
+    p2: "During the registration process every user is asked to provide some of the personal details: email, firstname, surname, date of birth and postcode. It is granted that all the data will be carefully stored in the database with a high level of security and that no authorized users have access to the data. Furthermore, the password is highly encrypted, hence not even authorized staff is able to access one. The website fully follows all the GDPR set by EU"
+
+    title3: "Calculator"
+    p3: "The carbon footprint calculator has been produced for the benefit of society. All the data that has been collected is stored in the database, and if one wants to delete the account, the calculated record will be deleted as well (following the GDPR). The conversion factors were designed by the team of students and they’ve taken reasonable care to ensure that the information is accurate, however, the team cannot be held liable for any errors."
+
+    title4: "Copyright"
+    p4: "The material and information provided by this web page, YourFootpring, are only for your personal view and you have no right to copy it and claim ownership of data or similar."
+
+    title5: "GDPR Privacy Policy"
+    p5: " Who we are - YourFootprint is a web page developed by a group of students from the University of Surrey.
+
+    Personal data - You are not obliged to provide any personal data, however, you may find the beneficial to register and use the features such as a calculator. We will be using your data to generate a leaderboard which will contain only you name and score, no other data will be available to the public.
+
+    Data Storage - data is held on servers secure and high protection is guaranteed.
+
+    Your Rights as a data subject - at any point whilst carbon footprint is in possession of your personal data you have rights to:
+    Rights of access - you are always able to access your personal data
+    Rights to be forgotten - at any point you are able to remove you user account and all the records related to you account"
+
+    popout: "I consent that YourFootprint has the right to use the data that has been provided in this form. I also understand that by clicking ‘Yes’, I agree to Terms and Conditions that you have read that the website provides."
